@@ -13,7 +13,10 @@ class Lifely extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Lifely',
-      theme: ThemeData.dark().copyWith(),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+      ),
+      routes: {'/main': (context) => const MainScreen()},
       home: const MainScreen(),
     );
   }
