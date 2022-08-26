@@ -84,24 +84,29 @@ class _LifeCounterState extends State<LifeCounter> {
                       borderRadius: BorderRadius.circular(30),
                       child: MaterialButton(
                         onPressed: () {
-                          setState(() {
-                            currentLife++;
-                          });
+                          setState(
+                            () {
+                              currentLife++;
+                            },
+                          );
                         },
                       ),
                     ),
                   ),
                   Expanded(
-                      child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: MaterialButton(
-                      onPressed: () {
-                        setState(() {
-                          currentLife--;
-                        });
-                      },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: MaterialButton(
+                        onPressed: () {
+                          setState(
+                            () {
+                              currentLife--;
+                            },
+                          );
+                        },
+                      ),
                     ),
-                  )),
+                  ),
                 ],
               ),
             ],
