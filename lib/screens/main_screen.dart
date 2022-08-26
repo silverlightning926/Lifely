@@ -18,19 +18,33 @@ class _MainScreenState extends State<MainScreen> {
           child: Stack(
             children: [
               Column(
-                children: const [
+                children: [
                   LifeCounter(
                     playerNum: 1,
-                    color: Colors.red,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.red.shade900,
+                        Colors.red.shade500,
+                      ],
+                    ),
                     quarterRotations: 2,
                     startingLife: 20,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   LifeCounter(
                     playerNum: 2,
-                    color: Colors.blue,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.blue.shade900,
+                        Colors.blue.shade500,
+                      ],
+                    ),
                     quarterRotations: 0,
                     startingLife: 20,
                   ),

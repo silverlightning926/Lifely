@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class LifeCounter extends StatefulWidget {
   const LifeCounter({
     Key? key,
-    required this.color,
+    required this.gradient,
     required this.playerNum,
     required this.quarterRotations,
     required this.startingLife,
   }) : super(key: key);
 
-  final Color color;
+  final Gradient gradient;
   final int playerNum;
   final int quarterRotations;
   final int startingLife;
@@ -41,7 +41,7 @@ class _LifeCounterState extends State<LifeCounter> {
         quarterTurns: widget.quarterRotations,
         child: Container(
           decoration: BoxDecoration(
-            color: widget.color,
+            gradient: widget.gradient,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Stack(
