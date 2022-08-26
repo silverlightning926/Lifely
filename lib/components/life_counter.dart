@@ -80,15 +80,20 @@ class _LifeCounterState extends State<LifeCounter> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: MaterialButton(
-                      onPressed: () {
-                        setState(() {
-                          currentLife++;
-                        });
-                      },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: MaterialButton(
+                        onPressed: () {
+                          setState(() {
+                            currentLife++;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   Expanded(
+                      child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
                     child: MaterialButton(
                       onPressed: () {
                         setState(() {
@@ -96,7 +101,7 @@ class _LifeCounterState extends State<LifeCounter> {
                         });
                       },
                     ),
-                  ),
+                  )),
                 ],
               ),
             ],
