@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lifely/screens/player_amount_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -61,7 +62,7 @@ class SettingsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Icon(
-                      Icons.autorenew,
+                      FontAwesomeIcons.retweet,
                       size: 75,
                     ),
                     SizedBox(
@@ -112,7 +113,7 @@ class SettingsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Icon(
-                      Icons.people,
+                      FontAwesomeIcons.userGroup,
                       size: 75,
                     ),
                     SizedBox(
@@ -120,6 +121,28 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     Text(
                       'Players',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {},
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      FontAwesomeIcons.dice,
+                      size: 75,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Dice',
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 25,
