@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifely/components/life_counter.dart';
+import 'package:lifely/screens/settings_screen.dart';
 
 class FivePlayerScreen extends StatefulWidget {
   const FivePlayerScreen({Key? key}) : super(key: key);
@@ -135,12 +136,43 @@ class _FivePlayerScreenState extends State<FivePlayerScreen> {
                       ),
                       color: Colors.white,
                       child: const Icon(
-                        Icons.autorenew,
+                        Icons.menu,
                         color: Colors.black,
                         size: 35,
                       ),
                       onPressed: () {
-                        Navigator.popAndPushNamed(context, "/main");
+                        Navigator.of(context).push(
+                          PageRouteBuilder(
+                            opaque: false,
+                            barrierDismissible: false,
+                            transitionDuration:
+                                const Duration(milliseconds: 150),
+                            reverseTransitionDuration:
+                                const Duration(milliseconds: 150),
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const SettingsScreen(
+                              resetRoute: '/five',
+                            ),
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(0.0, 1.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+
+                              final tween = Tween(begin: begin, end: end);
+                              final curvedAnimation = CurvedAnimation(
+                                parent: animation,
+                                curve: curve,
+                              );
+
+                              return SlideTransition(
+                                position: tween.animate(curvedAnimation),
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
                   ),
