@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lifely/screens/five_player_screen.dart';
+import 'package:lifely/screens/four_player_screen.dart';
+import 'package:lifely/screens/six_player_screen.dart';
+import 'package:lifely/screens/three_player_screen.dart';
 import 'package:lifely/screens/two_player_screen.dart';
 
 void main() {
@@ -16,7 +20,13 @@ class Lifely extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
       ),
-      routes: {'/main': (context) => const TwoPlayersScreen()},
+      routes: {
+        '/two': (context) => const TwoPlayersScreen(),
+        '/three': (context) => const ThreePlayerScreen(),
+        '/four': (context) => const FourPlayerScreen(),
+        '/five': (context) => const FivePlayerScreen(),
+        '/six': (context) => const SixPlayerScreen(),
+      },
       home: const TwoPlayersScreen(),
     );
   }
