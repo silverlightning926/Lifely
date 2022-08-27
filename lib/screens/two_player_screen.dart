@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lifely/components/life_counter.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class TwoPlayersScreen extends StatefulWidget {
+  const TwoPlayersScreen({Key? key}) : super(key: key);
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<TwoPlayersScreen> createState() => _TwoPlayersScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _TwoPlayersScreenState extends State<TwoPlayersScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

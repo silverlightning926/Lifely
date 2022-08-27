@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifely/screens/main_screen.dart';
+import 'package:lifely/screens/two_player_screen.dart';
 
 void main() {
   runApp(const Lifely());
@@ -16,8 +16,8 @@ class Lifely extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
       ),
-      routes: {'/main': (context) => const MainScreen()},
-      home: const MainScreen(),
+      routes: {'/main': (context) => const TwoPlayersScreen()},
+      home: const TwoPlayersScreen(),
     );
   }
 }
