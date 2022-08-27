@@ -29,7 +29,7 @@ class Lifely extends StatelessWidget {
         '/four': (context) => const FourPlayerScreen(),
         '/five': (context) => const FivePlayerScreen(),
         '/six': (context) => const SixPlayerScreen(),
-        'settings': (context) => const SettingsScreen(),
+        '/settings': (context) => const SettingsScreen(),
       },
       home: const TwoPlayersScreen(),
     );
