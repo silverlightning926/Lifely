@@ -47,36 +47,38 @@ class _LifeCounterState extends State<LifeCounter> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      "P${widget.playerNum}",
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 25,
-                        letterSpacing: 3,
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "P${widget.playerNum}",
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 25,
+                          letterSpacing: 3,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "$currentLife",
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 100,
+                      Text(
+                        "$currentLife",
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 100,
+                        ),
                       ),
-                    ),
-                    const Icon(
-                      CupertinoIcons.heart_solid,
-                      size: 50,
-                    )
-                  ],
+                      const Icon(
+                        CupertinoIcons.heart_solid,
+                        size: 50,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Column(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
@@ -86,7 +88,7 @@ class _LifeCounterState extends State<LifeCounter> {
                         onPressed: () {
                           setState(
                             () {
-                              currentLife++;
+                              currentLife--;
                             },
                           );
                         },
@@ -100,7 +102,7 @@ class _LifeCounterState extends State<LifeCounter> {
                         onPressed: () {
                           setState(
                             () {
-                              currentLife--;
+                              currentLife++;
                             },
                           );
                         },
