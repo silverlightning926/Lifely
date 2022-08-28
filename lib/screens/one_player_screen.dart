@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lifely/components/life_counter.dart';
 import 'package:lifely/screens/settings_screen.dart';
 
 class OnePlayersScreen extends StatefulWidget {
@@ -10,6 +10,8 @@ class OnePlayersScreen extends StatefulWidget {
 }
 
 class _OnePlayersScreenState extends State<OnePlayersScreen> {
+  int currentLife = 20;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,19 +19,88 @@ class _OnePlayersScreenState extends State<OnePlayersScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Stack(
+            fit: StackFit.expand,
             children: [
-              LifeCounter(
-                playerNum: 1,
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.red.shade900,
-                    Colors.red.shade500,
-                  ],
+              RotatedBox(
+                quarterTurns: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.red.shade900,
+                        Colors.red.shade500,
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "P${1}",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 25,
+                                  letterSpacing: 3,
+                                ),
+                              ),
+                              Text(
+                                "${currentLife}",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 100,
+                                ),
+                              ),
+                              const Icon(
+                                CupertinoIcons.heart_solid,
+                                size: 50,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: MaterialButton(
+                                onPressed: () {
+                                  setState(
+                                    () {currentLife--;},
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: MaterialButton(
+                                onPressed: () {
+                                  setState(
+                                    () {currentLife++;},
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                quarterRotations: 1,
-                startingLife: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 10.0, left: 10.0),

@@ -17,6 +17,7 @@ class _FivePlayerScreenState extends State<FivePlayerScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Column(
                 children: [

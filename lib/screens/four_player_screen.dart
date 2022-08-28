@@ -17,6 +17,7 @@ class _FourPlayerScreenState extends State<FourPlayerScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Column(
                 children: [

@@ -17,6 +17,7 @@ class _TwoPlayersScreenState extends State<TwoPlayersScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Column(
                 children: [

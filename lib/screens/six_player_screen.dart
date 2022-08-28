@@ -17,6 +17,7 @@ class _SixPlayerScreenState extends State<SixPlayerScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Row(
                 children: [
