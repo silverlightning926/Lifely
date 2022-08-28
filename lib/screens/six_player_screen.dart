@@ -82,7 +82,7 @@ class _SixPlayerScreenState extends State<SixPlayerScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         LifeCounter(
-                          playerNum: 3,
+                          playerNum: 2,
                           gradient: LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
@@ -98,7 +98,7 @@ class _SixPlayerScreenState extends State<SixPlayerScreen> {
                           height: 10,
                         ),
                         LifeCounter(
-                          playerNum: 4,
+                          playerNum: 3,
                           gradient: LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
@@ -114,7 +114,7 @@ class _SixPlayerScreenState extends State<SixPlayerScreen> {
                           height: 10,
                         ),
                         LifeCounter(
-                          playerNum: 5,
+                          playerNum: 4,
                           gradient: LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
