@@ -85,6 +85,7 @@ class _ThreePlayerScreenState extends State<ThreePlayerScreen> {
                   child: Center(
                     child: MenuButton(
                       resetRoute: '/three',
+                      numOfPlayer: 3,
                     ),
                   ),
                 ),

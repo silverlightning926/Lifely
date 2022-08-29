@@ -6,10 +6,11 @@ class MenuButton extends StatelessWidget {
   const MenuButton({
     Key? key,
     required this.resetRoute,
+    required this.numOfPlayer,
   }) : super(key: key);
 
   final String resetRoute;
-
+  final int numOfPlayer;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -41,6 +42,7 @@ class MenuButton extends StatelessWidget {
             pageBuilder: (context, animation, secondaryAnimation) =>
                 SettingsScreen(
               resetRoute: resetRoute,
+              numOfPlayer: numOfPlayer,
             ),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {

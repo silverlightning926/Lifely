@@ -125,6 +125,7 @@ class _FivePlayerScreenState extends State<FivePlayerScreen> {
                   child: Center(
                     child: MenuButton(
                       resetRoute: '/five',
+                      numOfPlayer: 5,
                     ),
                   ),
                 ),

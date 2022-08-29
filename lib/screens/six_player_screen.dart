@@ -144,6 +144,7 @@ class _SixPlayerScreenState extends State<SixPlayerScreen> {
                   child: Center(
                     child: MenuButton(
                       resetRoute: '/six',
+                      numOfPlayer: 6,
                     ),
                   ),
                 ),

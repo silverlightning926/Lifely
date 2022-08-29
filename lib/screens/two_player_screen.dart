@@ -56,6 +56,7 @@ class _TwoPlayersScreenState extends State<TwoPlayersScreen> {
               const Center(
                 child: MenuButton(
                   resetRoute: '/two',
+                  numOfPlayer: 2,
                 ),
               ),
             ],

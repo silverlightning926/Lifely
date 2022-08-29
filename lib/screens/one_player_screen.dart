@@ -20,6 +20,7 @@ class _OnePlayersScreenState extends State<OnePlayersScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: const MenuButton(
           resetRoute: '/one',
+          numOfPlayer: 1,
         ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),

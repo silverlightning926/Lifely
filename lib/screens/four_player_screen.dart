@@ -104,6 +104,7 @@ class _FourPlayerScreenState extends State<FourPlayerScreen> {
               const Center(
                 child: MenuButton(
                   resetRoute: '/four',
+                  numOfPlayer: 4,
                 ),
               ),
             ],

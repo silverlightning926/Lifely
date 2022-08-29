@@ -1,14 +1,18 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lifely/screens/dice_screen.dart';
 import 'package:lifely/screens/player_amount_screen.dart';
+import 'package:status_alert/status_alert.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key, this.resetRoute}) : super(key: key);
+  const SettingsScreen({Key? key, this.resetRoute, this.numOfPlayer})
+      : super(key: key);
 
   final String? resetRoute;
+  final int? numOfPlayer;
 
   @override
   Widget build(BuildContext context) {
@@ -173,6 +177,39 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     Text(
                       'Dice',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  StatusAlert.show(
+                    context,
+                    dismissOnBackgroundTap: true,
+                    duration: const Duration(seconds: 4),
+                    subtitle: 'Result: ${Random().nextInt(numOfPlayer!) + 1}',
+                    title: 'Random Player',
+                    configuration: const IconConfiguration(
+                      icon: FontAwesomeIcons.user,
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      FontAwesomeIcons.shuffle,
+                      size: 75,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Picker',
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 25,
