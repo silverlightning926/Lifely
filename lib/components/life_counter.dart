@@ -1,4 +1,5 @@
 import 'package:circular_menu/circular_menu.dart';
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,9 @@ class _LifeCounterState extends State<LifeCounter> {
   int currentPoison = 0;
   int currentEnergy = 0;
 
+  bool monarch = false;
+  bool ascend = false;
+
   @override
   void initState() {
     super.initState();
@@ -52,14 +56,29 @@ class _LifeCounterState extends State<LifeCounter> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        "P${widget.playerNum}",
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 25,
-                          letterSpacing: 3,
-                        ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(
+                            CommunityMaterialIcons.crown,
+                            size: 50,
+                            color: monarch ? Colors.yellow : Colors.transparent,
+                          ),
+                          Text(
+                            "P${widget.playerNum}",
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 25,
+                              letterSpacing: 3,
+                            ),
+                          ),
+                          Icon(
+                            const IconData(0xe94a, fontFamily: 'Mana'),
+                            color: ascend ? Colors.black : Colors.transparent,
+                            size: 50,
+                          ),
+                        ],
                       ),
                       Text(
                         currentMode == Modes.poison
@@ -156,6 +175,22 @@ class _LifeCounterState extends State<LifeCounter> {
                       onTap: () {
                         setState(() {
                           currentMode = Modes.energy;
+                        });
+                      }),
+                  CircularMenuItem(
+                      icon: const IconData(0xe94a, fontFamily: 'Mana'),
+                      color: Colors.orange,
+                      onTap: () {
+                        setState(() {
+                          ascend = !ascend;
+                        });
+                      }),
+                  CircularMenuItem(
+                      icon: CommunityMaterialIcons.crown,
+                      color: Colors.purple,
+                      onTap: () {
+                        setState(() {
+                          monarch = !monarch;
                         });
                       }),
                 ],
