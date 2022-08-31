@@ -11,10 +11,10 @@ class OnePlayersScreen extends StatefulWidget {
 }
 
 class _OnePlayersScreenState extends State<OnePlayersScreen> {
-  int currentLife = 20;
-
   @override
   Widget build(BuildContext context) {
+    final startingLife = ModalRoute.of(context)!.settings.arguments;
+
     return SafeArea(
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
@@ -25,7 +25,7 @@ class _OnePlayersScreenState extends State<OnePlayersScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: LifeCounter(
-            startingLife: 20,
+            startingLife: startingLife != null ? startingLife as int : 20,
             playerNum: 1,
             gradient: LinearGradient(
               begin: Alignment.topCenter,

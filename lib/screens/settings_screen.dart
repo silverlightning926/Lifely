@@ -31,6 +31,77 @@ class SettingsScreen extends StatelessWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
+          bottomNavigationBar: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 25.0,
+              horizontal: 20.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            resetRoute!, (route) => false,
+                            arguments: 20);
+                      },
+                      child: const Text(
+                        '20',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          fontSize: 45,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            resetRoute!, (route) => false,
+                            arguments: 30);
+                      },
+                      child: const Text(
+                        '30',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          fontSize: 45,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            resetRoute!, (route) => false,
+                            arguments: 40);
+                      },
+                      child: const Text(
+                        '40',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          fontSize: 45,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           appBar: AppBar(
             actions: [
               Padding(
@@ -191,10 +262,11 @@ class SettingsScreen extends StatelessWidget {
                     context,
                     dismissOnBackgroundTap: true,
                     duration: const Duration(seconds: 4),
-                    subtitle: 'Result: ${Random().nextInt(numOfPlayer!) + 1}',
+                    subtitle:
+                        'Result: Player ${Random().nextInt(numOfPlayer!) + 1}',
                     title: 'Random Player',
                     configuration: const IconConfiguration(
-                      icon: FontAwesomeIcons.user,
+                      icon: FontAwesomeIcons.solidUser,
                     ),
                   );
                 },
