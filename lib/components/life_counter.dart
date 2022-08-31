@@ -10,12 +10,16 @@ class LifeCounter extends StatefulWidget {
     required this.playerNum,
     required this.quarterRotations,
     required this.startingLife,
+    required this.lowerBound,
+    required this.upperBound,
   }) : super(key: key);
 
   final Gradient gradient;
   final int playerNum;
   final int quarterRotations;
   final int startingLife;
+  final int lowerBound;
+  final int upperBound;
 
   @override
   State<LifeCounter> createState() => _LifeCounterState();
@@ -50,7 +54,7 @@ class _LifeCounterState extends State<LifeCounter> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -114,11 +118,18 @@ class _LifeCounterState extends State<LifeCounter> {
                         onPressed: () {
                           setState(
                             () {
-                              currentMode == Modes.poison
-                                  ? currentPoison--
-                                  : currentMode == Modes.energy
-                                      ? currentEnergy--
-                                      : currentLife--;
+                              if ((currentMode == Modes.poison &&
+                                      currentPoison > widget.lowerBound) ||
+                                  (currentMode == Modes.energy &&
+                                      currentEnergy > widget.lowerBound) ||
+                                  (currentMode == Modes.life &&
+                                      currentLife > widget.lowerBound)) {
+                                currentMode == Modes.poison
+                                    ? currentPoison--
+                                    : currentMode == Modes.energy
+                                        ? currentEnergy--
+                                        : currentLife--;
+                              }
                             },
                           );
                         },
@@ -132,11 +143,18 @@ class _LifeCounterState extends State<LifeCounter> {
                         onPressed: () {
                           setState(
                             () {
-                              currentMode == Modes.poison
-                                  ? currentPoison++
-                                  : currentMode == Modes.energy
-                                      ? currentEnergy++
-                                      : currentLife++;
+                              if ((currentMode == Modes.poison &&
+                                      currentPoison < widget.upperBound) ||
+                                  (currentMode == Modes.energy &&
+                                      currentEnergy < widget.upperBound) ||
+                                  (currentMode == Modes.life &&
+                                      currentLife < widget.upperBound)) {
+                                currentMode == Modes.poison
+                                    ? currentPoison++
+                                    : currentMode == Modes.energy
+                                        ? currentEnergy++
+                                        : currentLife++;
+                              }
                             },
                           );
                         },

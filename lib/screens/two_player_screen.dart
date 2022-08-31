@@ -14,6 +14,8 @@ class _TwoPlayersScreenState extends State<TwoPlayersScreen> {
   @override
   Widget build(BuildContext context) {
     final startingLife = ModalRoute.of(context)!.settings.arguments;
+    const lowerBound = -999;
+    const upperBound = 9999;
 
     return SafeArea(
       child: Scaffold(
@@ -25,34 +27,40 @@ class _TwoPlayersScreenState extends State<TwoPlayersScreen> {
               Column(
                 children: [
                   LifeCounter(
-                      playerNum: 1,
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.red.shade900,
-                          Colors.red.shade500,
-                        ],
-                      ),
-                      quarterRotations: 2,
-                      startingLife:
-                          startingLife != null ? startingLife as int : 20),
+                    playerNum: 1,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.red.shade900,
+                        Colors.red.shade500,
+                      ],
+                    ),
+                    quarterRotations: 2,
+                    startingLife:
+                        startingLife != null ? startingLife as int : 20,
+                    lowerBound: lowerBound,
+                    upperBound: upperBound,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
                   LifeCounter(
-                      playerNum: 2,
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.blue.shade900,
-                          Colors.blue.shade500,
-                        ],
-                      ),
-                      quarterRotations: 0,
-                      startingLife:
-                          startingLife != null ? startingLife as int : 20),
+                    playerNum: 2,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.blue.shade900,
+                        Colors.blue.shade500,
+                      ],
+                    ),
+                    quarterRotations: 0,
+                    startingLife:
+                        startingLife != null ? startingLife as int : 20,
+                    lowerBound: lowerBound,
+                    upperBound: upperBound,
+                  ),
                 ],
               ),
               const Center(

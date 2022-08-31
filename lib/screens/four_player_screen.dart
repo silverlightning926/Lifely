@@ -30,36 +30,40 @@ class _FourPlayerScreenState extends State<FourPlayerScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         LifeCounter(
-                            playerNum: 1,
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.red.shade900,
-                                Colors.red.shade500,
-                              ],
-                            ),
-                            quarterRotations: 1,
-                            startingLife: startingLife != null
-                                ? startingLife as int
-                                : 20),
+                          playerNum: 1,
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.red.shade900,
+                              Colors.red.shade500,
+                            ],
+                          ),
+                          quarterRotations: 1,
+                          startingLife:
+                              startingLife != null ? startingLife as int : 20,
+                          lowerBound: -999,
+                          upperBound: 999,
+                        ),
                         const SizedBox(
                           width: 10,
                         ),
                         LifeCounter(
-                            playerNum: 2,
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.green.shade900,
-                                Colors.green.shade500,
-                              ],
-                            ),
-                            quarterRotations: 3,
-                            startingLife: startingLife != null
-                                ? startingLife as int
-                                : 20),
+                          playerNum: 2,
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.green.shade900,
+                              Colors.green.shade500,
+                            ],
+                          ),
+                          quarterRotations: 3,
+                          startingLife:
+                              startingLife != null ? startingLife as int : 20,
+                          lowerBound: -999,
+                          upperBound: 999,
+                        ),
                       ],
                     ),
                   ),
@@ -72,36 +76,40 @@ class _FourPlayerScreenState extends State<FourPlayerScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         LifeCounter(
-                            playerNum: 4,
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.blue.shade900,
-                                Colors.blue.shade500,
-                              ],
-                            ),
-                            quarterRotations: 1,
-                            startingLife: startingLife != null
-                                ? startingLife as int
-                                : 20),
+                          playerNum: 4,
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.blue.shade900,
+                              Colors.blue.shade500,
+                            ],
+                          ),
+                          quarterRotations: 1,
+                          startingLife:
+                              startingLife != null ? startingLife as int : 20,
+                          lowerBound: -999,
+                          upperBound: 9999,
+                        ),
                         const SizedBox(
                           width: 10,
                         ),
                         LifeCounter(
-                            playerNum: 3,
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.grey.shade900,
-                                Colors.grey.shade500,
-                              ],
-                            ),
-                            quarterRotations: 3,
-                            startingLife: startingLife != null
-                                ? startingLife as int
-                                : 20),
+                          playerNum: 3,
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.grey.shade900,
+                              Colors.grey.shade500,
+                            ],
+                          ),
+                          quarterRotations: 3,
+                          startingLife:
+                              startingLife != null ? startingLife as int : 20,
+                          lowerBound: -999,
+                          upperBound: 9999,
+                        ),
                       ],
                     ),
                   ),

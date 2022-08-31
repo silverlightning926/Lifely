@@ -36,6 +36,8 @@ class _OnePlayersScreenState extends State<OnePlayersScreen> {
               ],
             ),
             quarterRotations: 1,
+            lowerBound: -999999999,
+            upperBound: 9999999999,
           ),
         ),
       ),
