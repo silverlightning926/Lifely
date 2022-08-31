@@ -41,8 +41,17 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: OutlinedButton(
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: MaterialButton(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        side: BorderSide(
+                          width: 2,
+                          color: Colors.white,
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.of(context).pushNamedAndRemoveUntil(
                             resetRoute!, (route) => false,
@@ -61,8 +70,17 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: OutlinedButton(
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: MaterialButton(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        side: BorderSide(
+                          width: 2,
+                          color: Colors.white,
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.of(context).pushNamedAndRemoveUntil(
                             resetRoute!, (route) => false,
@@ -81,8 +99,17 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: OutlinedButton(
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: MaterialButton(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        side: BorderSide(
+                          width: 2,
+                          color: Colors.white,
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.of(context).pushNamedAndRemoveUntil(
                             resetRoute!, (route) => false,
