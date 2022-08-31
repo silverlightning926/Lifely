@@ -23,21 +23,25 @@ class _OnePlayersScreenState extends State<OnePlayersScreen> {
           numOfPlayer: 1,
         ),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: LifeCounter(
-            startingLife: startingLife != null ? startingLife as int : 20,
-            playerNum: 1,
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.red.shade900,
-                Colors.red.shade500,
-              ],
-            ),
-            quarterRotations: 1,
-            lowerBound: -999999999,
-            upperBound: 9999999999,
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              LifeCounter(
+                startingLife: startingLife != null ? startingLife as int : 20,
+                playerNum: 1,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.red.shade900,
+                    Colors.red.shade500,
+                  ],
+                ),
+                quarterRotations: 1,
+                lowerBound: -999999999,
+                upperBound: 9999999999,
+              ),
+            ],
           ),
         ),
       ),
