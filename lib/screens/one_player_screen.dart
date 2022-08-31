@@ -17,7 +17,7 @@ class _OnePlayersScreenState extends State<OnePlayersScreen> {
 
     return SafeArea(
       child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: const MenuButton(
           resetRoute: '/one',
           numOfPlayer: 1,

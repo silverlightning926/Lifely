@@ -1,3 +1,4 @@
+import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,13 +21,11 @@ class LifeCounter extends StatefulWidget {
 }
 
 class _LifeCounterState extends State<LifeCounter> {
-  int currentLife = 20;
+  Modes currentMode = Modes.life;
 
-  void resetCounter() {
-    setState(() {
-      currentLife = 0;
-    });
-  }
+  int currentLife = 20;
+  int currentPoison = 0;
+  int currentEnergy = 0;
 
   @override
   void initState() {
@@ -63,15 +62,23 @@ class _LifeCounterState extends State<LifeCounter> {
                         ),
                       ),
                       Text(
-                        "$currentLife",
+                        currentMode == Modes.poison
+                            ? '$currentPoison'
+                            : currentMode == Modes.energy
+                                ? '$currentEnergy'
+                                : '$currentLife',
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontWeight: FontWeight.w900,
                           fontSize: 100,
                         ),
                       ),
-                      const Icon(
-                        CupertinoIcons.heart_solid,
+                      Icon(
+                        currentMode == Modes.poison
+                            ? const IconData(0xe618, fontFamily: 'Mana')
+                            : currentMode == Modes.energy
+                                ? const IconData(0xe907, fontFamily: 'Mana')
+                                : CupertinoIcons.heart_solid,
                         size: 50,
                       ),
                     ],
@@ -88,7 +95,11 @@ class _LifeCounterState extends State<LifeCounter> {
                         onPressed: () {
                           setState(
                             () {
-                              currentLife--;
+                              currentMode == Modes.poison
+                                  ? currentPoison--
+                                  : currentMode == Modes.energy
+                                      ? currentEnergy--
+                                      : currentLife--;
                             },
                           );
                         },
@@ -102,7 +113,11 @@ class _LifeCounterState extends State<LifeCounter> {
                         onPressed: () {
                           setState(
                             () {
-                              currentLife++;
+                              currentMode == Modes.poison
+                                  ? currentPoison++
+                                  : currentMode == Modes.energy
+                                      ? currentEnergy++
+                                      : currentLife++;
                             },
                           );
                         },
@@ -111,10 +126,50 @@ class _LifeCounterState extends State<LifeCounter> {
                   ),
                 ],
               ),
+              CircularMenu(
+                toggleButtonColor: Colors.white,
+                toggleButtonBoxShadow: const [],
+                toggleButtonIconColor: Colors.black,
+                toggleButtonSize: 15,
+                radius: 115,
+                alignment: Alignment.bottomRight,
+                items: [
+                  CircularMenuItem(
+                      icon: CupertinoIcons.heart_solid,
+                      color: Colors.pinkAccent,
+                      onTap: () {
+                        setState(() {
+                          currentMode = Modes.life;
+                        });
+                      }),
+                  CircularMenuItem(
+                      icon: const IconData(0xe618, fontFamily: 'Mana'),
+                      color: Colors.green,
+                      onTap: () {
+                        setState(() {
+                          currentMode = Modes.poison;
+                        });
+                      }),
+                  CircularMenuItem(
+                      icon: const IconData(0xe907, fontFamily: 'Mana'),
+                      color: Colors.blue,
+                      onTap: () {
+                        setState(() {
+                          currentMode = Modes.energy;
+                        });
+                      }),
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+enum Modes {
+  life,
+  poison,
+  energy,
 }
