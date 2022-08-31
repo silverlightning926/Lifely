@@ -1,9 +1,9 @@
 name: lifely
-description: A Simple Life Tracking App
+description: A Simple MTG Life Tracking App
 
 publish_to: 'none'
 
-version: 2.0.3+5
+version: 3.0.0+6
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
